@@ -2,7 +2,9 @@ Name
 ======
 lua-resty-mongol - Lua Mongodb driver for ngx_lua base on the cosocket API
 
-Thanks to project Mongol by daurnimator
+lua opeenresty 的 mongodb扩展库， 并解决了大多数bson库的一些BUG.
+
+
 
 Dependencies
 ======
@@ -150,8 +152,8 @@ Returns a cursor object for excuting query.
 
 ####col:kill_cursors(cursorIDs)
 
-###cursorid,res, t = col:query(query, [numberToReturn], [offset], [limit])
- - query  ( ['$query'] = {field= 'xxxx' } , {["$orderby"] = {time=-1}  }
+####cursorid, res, t = col:query(query, [numberToReturn], [offset], [limit])
+ - query  example: { ['$query'] = { field = 'xxxx' } , {["$orderby"] = { time=-1 }  }
 
 
 ###Cursor objects
