@@ -206,17 +206,14 @@ end
 
 function colmethods:query(query, returnfields, numberToSkip, numberToReturn, options)
     numberToSkip = numberToSkip or 0
-
-    local flags = 0
-    if options then
-        flags = 2^1*( options.TailableCursor and 1 or 0 )
-            + 2^2*( options.SlaveOk and 1 or 0 )
+    options = options or {}
+    local flags = 2^1*( options.TailableCursor and 1 or 0 )
+            + 2^2*( options.SlaveOk==false  and 0 or 1 )  --default the slave ok 
             + 2^3*( options.OplogReplay and 1 or 0 )
             + 2^4*( options.NoCursorTimeout and 1 or 0 )
             + 2^5*( options.AwaitData and 1 or 0 )
             + 2^6*( options.Exhaust and 1 or 0 )
             + 2^7*( options.Partial and 1 or 0 )
-    end
 
     query = to_bson(query)
     if returnfields then
