@@ -2,9 +2,7 @@ Name
 ======
 lua-resty-mongol - Lua Mongodb driver for ngx_lua base on the cosocket API
 
-lua opeenresty 的 mongodb扩展库， 并解决了大多数bson库的一些BUG.
-
-
+lua opeenresty 的 mongodb扩展库， 并解决了大多数bson库的一些BUG. 并支持副本集读取操作
 
 Dependencies
 ======
