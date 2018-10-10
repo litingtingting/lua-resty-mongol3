@@ -150,7 +150,7 @@ Returns a cursor object for excuting query.
 
 ####col:kill_cursors(cursorIDs)
 
-####cursorid, res, t = col:query(query, [numberToReturn], [offset], [limit])
+####cursorid, res, t = col:query(query, [returnfields], [offset], [limit])
  - query  example: { ['$query'] = { field = 'xxxx' } , {["$orderby"] = { time=-1 }  }
 
 
